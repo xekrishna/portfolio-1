@@ -15,7 +15,44 @@ body {
     font-family: SF;
 }
 
+.preloader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #211822 no-repeat cover;
+    aspect-ratio: 3/2;
+    width: 100vw;
+    height: 11vh;
+    z-index: 110;
+    overflow: hidden;
+}
 
+.preloader > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45px;
+    height: 40px;
+    background: linear-gradient(#0000 calc(1*100%/6),#fff 0 calc(3*100%/6),#0000 0),
+              linear-gradient(#0000 calc(2*100%/6),#fff 0 calc(4*100%/6),#0000 0),
+              linear-gradient(#0000 calc(3*100%/6),#fff 0 calc(5*100%/6),#0000 0);
+    background-size: 10px 400%;
+    background-repeat: no-repeat;
+    animation: matrix 1s infinite linear;
+    z-index: 111;
+  }
+  
+  @keyframes matrix {
+    0% {
+      background-position: 0% 100%, 50% 100%, 100% 100%
+    }
+  
+    100% {
+      background-position: 0% 0%, 50% 0%, 100% 0%
+    }
+  }
+      
 
 .sidebar {
     position: fixed;
@@ -140,7 +177,11 @@ article {
 
 article > h3 {
     font-size: 30px;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
 }
+
 
 article > div {
     display: flex;
@@ -184,18 +225,103 @@ article > div > div {
     border-radius: 10px;
 }
 
+.burger {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
-    .sidebar {
-        width: 88px;
-        padding-right: 20px;
+    .menu {
+        position: fixed;
+        top: 0;
+        padding-top: 15px;
+        padding-bottom: 10px;
+        width: 100%;
+        text-align: end;
+        background-color: rgb(16, 11, 17);
+    }
+
+    .burger {
+        position: relative;
+        margin-right: 20px;
+        width: 40px;
+        height: 30px;
+        background: transparent;
+        cursor: pointer;
+        display: inline-block;
+        z-index: 100;
+      }
+      
+      .burger input {
+        display: none;
+      }
+      
+      .burger span {
+        display: block;
+        position: absolute;
+        right: 10px;
+        height: 4px;
+        width: 100%;
+        background: rgb(255, 255, 255);
+        border-radius: 9px;
+        opacity: 1;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+      
+      .burger span:nth-of-type(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+      
+      .burger span:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: left center;
+      }
+      
+      .burger span:nth-of-type(3) {
+        top: 100%;
+        transform-origin: left center;
+        transform: translateY(-100%);
+      }
+      
+      .burger input:checked ~ span:nth-of-type(1) {
+        transform: rotate(45deg);
+        top: 0px;
+        left: 5px;
+      }
+      
+      .burger input:checked ~ span:nth-of-type(2) {
+        width: 0%;
+        opacity: 0;
+      }
+      
+      .burger input:checked ~ span:nth-of-type(3) {
+        transform: rotate(-45deg);
+        top: 28px;
+        left: 5px;
+      }
+
+    .sidebar{
+        bottom: 0px;
+        padding: 0 20px 20px 20px;
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 90%;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 10;
+        margin: auto auto 0 -20px;
     }
 
     .sidebar p{
-        padding: 10px 0 0 10px;
+        margin: 0 auto 0 auto;
     }
     
     .sidebar.close .text {
-        opacity: 0;
+        opacity: 1;
     }
 
     .main-socials li{
@@ -204,19 +330,30 @@ article > div > div {
         margin-right: auto;
     }
 
-    .main-socials ul {
-        margin: 0 0 0 -10px;
+    .main-socials {
+        margin :20px auto 0 auto; 
+        height: 90%;
+        width: 80%;
+    }
+
+    .main-socials > ul {
+        height: 80%;
+        width: 40%;
     }
 
     article {
-        margin-left: 150px;
+        margin-left: 25px;
     }
 
     .header {
-        margin-left: 100px;
+        font-size: 35px;
+        margin-top: 70px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
     }
 
-    div::-webkit-scrollbar{
+    ::-webkit-scrollbar{
         display: none;
     }
 
@@ -224,7 +361,7 @@ article > div > div {
         flex-wrap: nowrap;
         overflow-y: scroll;
         max-height: 220px;
-        max-width: 220px;
+        max-width: 100%;
     }
 
     article > div > div {

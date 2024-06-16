@@ -8,7 +8,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <nav class="sidebar close">
+        <div id="preloader">
+            <div class="loader"></div>
+        </div>
+        <div class="menu">
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger" onclick="loader()">
+                <span></span>
+                <span></span>
+                <span></span>
+          </label>
+        </div>
+        <nav class="sidebar close" id="sidebar">
             <div class="main-socials">
                 <p>Socials</p>
                 <ul>
@@ -70,13 +81,9 @@
             </div>
 
         </article>
-        <div id="wrapper">
-            <div class="scrollbar" id="style-1">
-                <div class="force-overflow"></div>
-            </div>
-        </div>
+        
         
 
-        <script src="script.js"></script>
+        <script src="src/script.js"></script>
     </body>
 </html>

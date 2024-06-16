@@ -1,2 +1,15 @@
-document.body.style.scrollbarTrackColor="#100b11"
-document.body.style.scrollbarFaceColor="#100b11"
+var preloader = document.getElementById("preloader");
+
+window.addEventListener("load", function () {
+    preloader.style.display = "none";
+});
+
+
+function loader() {
+    var sidebar = document.getElementById("sidebar");
+    if (sidebar.style.display === "block") {
+        sidebar.style.display = "none";
+      } else {
+        sidebar.style.display = "block";
+      }
+};
