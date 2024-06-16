@@ -117,6 +117,7 @@ li span {
 }
 
 a {
+    -webkit-tap-highlight-color: transparent;
     font-size: 20px;
     text-decoration: none;
     color: #6b6b6b;
@@ -231,6 +232,7 @@ article > div > div {
 
 @media only screen and (max-width: 768px) {
     .menu {
+        -webkit-tap-highlight-color: transparent;
         position: fixed;
         top: 0;
         padding-top: 15px;
@@ -241,6 +243,7 @@ article > div > div {
     }
 
     .burger {
+        -webkit-tap-highlight-color: transparent;
         position: relative;
         margin-right: 20px;
         width: 40px;
@@ -324,6 +327,10 @@ article > div > div {
         opacity: 1;
     }
 
+    .main-socials > a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
     .main-socials li{
         padding: 0;
         margin-left: auto;
@@ -346,7 +353,7 @@ article > div > div {
     }
 
     .header {
-        font-size: 35px;
+        font-size: 25px;
         margin-top: 70px;
         margin-left: auto;
         margin-right: auto;
