@@ -193,7 +193,6 @@ article > div {
     margin-bottom: 20px;
     height: 250px;
     width: auto;
-
 }
 
 article > div > div {
@@ -201,6 +200,44 @@ article > div > div {
     height: 250px;
     width: 250px;
     border-radius: 20px;
+}
+
+.project-container {
+    position: relative;
+    max-width: 100%;
+    height: 280px;
+}
+
+.project-container > div {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-right: -10px;
+    height: 100%;
+    
+}
+
+
+.project-container > div > div {
+    height: 60%;
+}
+
+.project-container > div > .txt {
+    padding: 15px;
+    height: 30%;
+}
+
+.project-container > div > .txt > p {
+    font-size: 15px;
+    font-weight: 300;
+    white-space: nowrap;
+    color: #9f9f9f;
+}
+
+.project-container > div > div > img{
+    border-radius: 20px;
+    max-width: 90%;
+    padding: 10px;
 }
 
 .experience-container > div >h4{
@@ -367,14 +404,18 @@ article > div > div {
     article > div {
         flex-wrap: nowrap;
         overflow-y: scroll;
-        max-height: 220px;
+        max-height: 270px;
         max-width: 100%;
     }
 
     article > div > div {
-        max-height: 200px;
+        max-height: 270px;
         max-width: 200px;
         min-height: 200px;
         min-width: 200px;
+    }
+
+    .project-container > div > .txt {
+        margin-top: -30px;
     }
 }

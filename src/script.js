@@ -13,3 +13,7 @@ function loader() {
         sidebar.style.display = "block";
       }
 };
+
+function openSpotify () {
+  location.href = "https:/xekrishna.github.io/spotify-clone"
+}
