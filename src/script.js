@@ -15,5 +15,5 @@ function loader() {
 };
 
 function openSpotify () {
-  location.href = "https:/xekrishna.github.io/spotify-clone"
+  location.href = "https://xekrishna.github.io/spotify-clone"
 }
